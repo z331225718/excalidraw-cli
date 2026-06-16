@@ -1,0 +1,31 @@
+{
+  "name": "excalidraw-cli",
+  "version": "0.1.0",
+  "description": "CLI tool to convert SVG to Excalidraw format and render to PNG. Open-source alternative to Feishu whiteboard CLI.",
+  "main": "src/index.js",
+  "bin": {
+    "excalidraw-cli": "./bin/excalidraw-cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "excalidraw",
+    "svg",
+    "cli",
+    "whiteboard",
+    "diagram"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.0",
+    "@excalidraw/utils": "^0.1.2",
+    "sharp": "^0.35.1",
+    "svg-parser": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
