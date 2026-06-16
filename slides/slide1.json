@@ -1,0 +1,104 @@
+{
+  "version": 2,
+  "nodes": [{
+    "type": "frame", "layout": "vertical", "gap": 0, "padding": 0,
+    "width": 1660, "height": "fit-content", "fillColor": "#F5F4EF",
+    "children": [
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [20,32],
+        "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A", "alignItems": "center",
+        "children": [
+          { "type": "frame", "layout": "vertical", "gap": 6, "padding": 0, "width": "fill-container", "height": "fit-content",
+            "children": [
+              { "type": "text", "text": "Phase1 ADS / PyBERT Benchmark Report", "fontSize": 36, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "PCIe5 TX/RX IBIS-AMI Golden Comparison · 2026-06-12 · commit 1c845d9", "fontSize": 13, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "rect", "width": 160, "height": 80, "text": "OVERALL\nPASS", "fontSize": 16, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0 }
+        ]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": 0, "width": "fill-container", "height": "fit-content", "alignItems": "stretch",
+        "children": [
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [20,24], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "MAX CONTOUR DELTA", "fontSize": 12, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "0.835%", "fontSize": 52, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [20,24], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+            "children": [
+              { "type": "text", "text": "SELECTED BERS", "fontSize": 12, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "1e-05 · 1e-04 · 1e-03", "fontSize": 36, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [20,24], "width": "fill-container", "height": "fit-content", "fillColor": "#E6FF3D",
+            "children": [
+              { "type": "text", "text": "CORNERS", "fontSize": 12, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "Typ · Slow · Fast", "fontSize": 40, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [20,24], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "BIT RATE", "fontSize": 12, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "32 Gbps", "fontSize": 48, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "NODE PULSE PARITY — ADS vs PyBERT Main Cursor", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [4,12], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "tx_init_in\nADS: 0.17169\nPyBERT: 0.17170\nΔ +0.00068%", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 1, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "tx_init_out\nADS: 0.08110\nPyBERT: 0.08110\nΔ +0.00074%", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 1, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "rx_init_in\nADS: 0.08110\nPyBERT: 0.08110\nΔ +0.00074%", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 1, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "rx_init_out\nADS: 0.33770\nPyBERT: 0.33769\nΔ -0.00359%", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 1, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "rx_final\nADS: 0.33770\nPyBERT: 0.33769\nΔ -0.00359%", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 1, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [6,16], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "PASS", "fontSize": 14, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "PASS", "fontSize": 14, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "PASS", "fontSize": 14, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "PASS", "fontSize": 14, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "PASS", "fontSize": 14, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [8,16], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+        "children": [{ "type": "text", "text": "Statistical contour comparison: PyBERT vs ADS reference. Contour area matching at 3 BER levels. Corner sweeps: Typ / Slow 85°C / Fast -40°C. Gate: independent native PyBERT contour. ADS EyeProbe: Save_Contour=yes, Save_Density=no.", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "CONTOUR RESULTS BY CORNER", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [12,24], "width": "fill-container", "height": "fit-content", "alignItems": "stretch",
+        "children": [
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [16,20], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "TX Typ", "fontSize": 18, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "PASS   Δ 0.048%   Corr 0.999", "fontSize": 14, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [16,20], "width": "fill-container", "height": "fit-content", "fillColor": "#E6FF3D",
+            "children": [
+              { "type": "text", "text": "TX Slow", "fontSize": 18, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "PASS   Δ 0.723%   Corr 0.993", "fontSize": 14, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [16,20], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+            "children": [
+              { "type": "text", "text": "TX Fast", "fontSize": 18, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "PASS   Δ 0.835%   Corr 0.990", "fontSize": 14, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 8, "padding": [16,20], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "RX Typ", "fontSize": 18, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "PASS   Δ 0.152%   Corr 0.994", "fontSize": 14, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}

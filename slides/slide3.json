@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "nodes": [{
+    "type": "frame", "layout": "vertical", "gap": 0, "padding": 0,
+    "width": 1660, "height": "fit-content", "fillColor": "#F5F4EF",
+    "children": [
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [16,28], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A", "alignItems": "center",
+        "children": [
+          { "type": "text", "text": "Phase1 ADS / PyBERT — Channel & Configuration", "fontSize": 28, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "width": 110, "height": 50, "text": "SLIDE 3/4", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0 }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "CHANNEL TOPOLOGY", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [12,20], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "id": "tx2", "text": "TX Driver\npcie_tx_drv_Typ.s4p\n100Ω source", "fontSize": 13, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderColor": "#0A0A0A", "borderWidth": 2, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "id": "ch2", "text": "PCIe5 Channel\nchannel_gen5_highloss.s4p\n0.5m · Z0=100Ω · v0=0.67", "fontSize": 13, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderColor": "#0A0A0A", "borderWidth": 2, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "id": "rx2", "text": "RX Front-end\npcie_rx_fe_Typ.s4p\n100Ω load", "fontSize": 13, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderColor": "#0A0A0A", "borderWidth": 2, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "ADS CHANNELSIM & BATCHSIM", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [8,16], "width": "fill-container", "height": "fit-content", "alignItems": "stretch",
+        "children": [
+          { "type": "frame", "layout": "vertical", "gap": 2, "padding": [12,16], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "ChannelSim", "fontSize": 13, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "32 Gbps  ·  32 spui  ·  NRZ  ·  Statistical", "fontSize": 14, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "max_impulse_length_ui: 1000", "fontSize": 12, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 2, "padding": [12,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+            "children": [
+              { "type": "text", "text": "BatchSim", "fontSize": 13, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "Analysis: ChannelSim1  ·  UseSweepModule: True", "fontSize": 14, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "SweepModule: CSV_List  ·  sweep_gen5_3corners.csv", "fontSize": 12, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "UseSeparateProcess: True  ·  MergeDatasets: True", "fontSize": 12, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" }
+            ]
+          }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8",
+        "children": [{ "type": "text", "text": "SWEEP ROW (corner_index=0, batch_number=1, ami_corner=0)", "fontSize": 14, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "tx_swing\n0.886", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "tx_rj\n0.00448", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "tx_dj\n0.0102", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "tx_dcd\n0.0015", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "rx_rj\n0.0157", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "rx_dj\n0.106", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "ami_gain\n16", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "ami_peak\n34", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "ami_lfeq\n4", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "ami_vga_indbyp1\n4", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "tx_drv\npcie_tx_drv_Typ", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "rx_fe\npcie_rx_fe_Typ", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "PYBERT CONFIG", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "bit_rate\n32 Gbps", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "nbits\n16384", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "nspui\n32", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "pattern\nprbs7", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "eye_bits\n16384", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      }
+    ]
+  },
+  { "type": "connector", "connector": { "from": "tx2", "to": "ch2", "fromAnchor": "right", "toAnchor": "left", "endArrow": "arrow", "lineColor": "#0A0A0A" } },
+  { "type": "connector", "connector": { "from": "ch2", "to": "rx2", "fromAnchor": "right", "toAnchor": "left", "endArrow": "arrow", "lineColor": "#0A0A0A" } }
+  ]}

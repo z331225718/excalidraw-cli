@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "nodes": [{
+    "type": "frame", "layout": "vertical", "gap": 0, "padding": 0,
+    "width": 1660, "height": "fit-content", "fillColor": "#F5F4EF",
+    "children": [
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [16,28], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A", "alignItems": "center",
+        "children": [
+          { "type": "text", "text": "Phase1 ADS / PyBERT — BER Contours & Reproduction", "fontSize": 28, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "width": 110, "height": 50, "text": "SLIDE 4/4", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0 }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "ADS BER CONTOUR DATA", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [4,12], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "BER\n1e-09", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "BER\n1e-08", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "BER\n1e-07", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "BER\n1e-06", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "BER\n1e-05", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "BER\n1e-04", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "BER\n1e-03", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [4,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "Width: 9.06ps\nHeight: 0.098V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Width: 9.69ps\nHeight: 0.106V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Width: 10.63ps\nHeight: 0.114V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Width: 11.56ps\nHeight: 0.124V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Width: 12.81ps\nHeight: 0.136V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Width: 14.06ps\nHeight: 0.149V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Width: 16.25ps\nHeight: 0.166V", "fontSize": 11, "fillColor": "#F5F4EF", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "MODEL & CHANNEL FILES", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [6,14], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "IBIS MODEL", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "pcie_gen5.ibs", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "TX AMI", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "ctspcie_tx_gen5.ami", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "TX DLL", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "ctspcie_tx_win64.dll", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+            "children": [
+              { "type": "text", "text": "RX AMI", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "ctspcie_rx_gen5.ami", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          }
+        ]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [6,14], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8", "alignItems": "stretch",
+        "children": [
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8",
+            "children": [
+              { "type": "text", "text": "RX DLL", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "ctspcie_rx_win64.dll", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#E6FF3D",
+            "children": [
+              { "type": "text", "text": "CHANNEL", "fontSize": 11, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "channel_gen5_highloss.s4p", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          },
+          { "type": "frame", "layout": "vertical", "gap": 3, "padding": [10,14], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8",
+            "children": [
+              { "type": "text", "text": "S4P FILES", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+              { "type": "text", "text": "pcie_tx_drv_Typ + pcie_rx_fe_Typ", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }
+            ]
+          }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "REPRODUCTION COMMANDS", "fontSize": 16, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 6, "padding": [12,16], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8",
+        "children": [
+          { "type": "rect", "text": "pytest test_ads_bench.py::test_native_pybert_contour_metrics_match_current_ads_dataset -q", "fontSize": 12, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "pytest test_ads_bench.py test_golden_case.py test_web_m0.py test_statistical_eye.py test_ibisami_response_mode.py -q", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "python scripts/generate_ads_benchmark_html_report.py", "fontSize": 12, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 2, "padding": [16,20], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF",
+        "children": [
+          { "type": "text", "text": "Generated 2026-06-12 · Case ID: pcie5_ads_benchmark_001 · ADS workspace: MyWorkspace_wrk", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" },
+          { "type": "text", "text": "neo-grid-bold · excalidraw-cli · beautiful-excalidraw", "fontSize": 11, "textColor": "#8A8A85", "width": "fill-container", "height": "fit-content" }
+        ]
+      }
+    ]
+  }]
+}

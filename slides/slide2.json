@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "nodes": [{
+    "type": "frame", "layout": "vertical", "gap": 0, "padding": 0,
+    "width": 1660, "height": "fit-content", "fillColor": "#F5F4EF",
+    "children": [
+      { "type": "frame", "layout": "horizontal", "gap": 0, "padding": [16,28], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A", "alignItems": "center",
+        "children": [
+          { "type": "text", "text": "Phase1 ADS / PyBERT — TX AMI Parameters", "fontSize": 28, "textColor": "#F5F4EF", "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "width": 110, "height": 50, "text": "SLIDE 2/4", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0 }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [8,16], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8",
+        "children": [{ "type": "text", "text": "TX AMI: PCIe_TX_AMI_5.ami  ·  DLL: ctspcie_tx_win64.dll  ·  AMI_Version 6.1  ·  NRZ  ·  Preset 11", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "Tx_DCD\n0.0015", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Tx_Rj\n0.00448", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Tx_Dj\n0.0102", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "swing_Vppd\n0.886", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Ignore_Bits\n1000", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "TX_Corner\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "lane\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [8,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "TX FFE Weights (5-tap)", "fontSize": 14, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "TAP -1\n-0.25", "fontSize": 14, "fillColor": "#0A0A0A", "textColor": "#E6FF3D", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "TAP 0 (main)\n0.75", "fontSize": 14, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "TAP +1\n0", "fontSize": 14, "fillColor": "#ECECE8", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "TAP +2\n0", "fontSize": 14, "fillColor": "#ECECE8", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "TAP +3\n0", "fontSize": 14, "fillColor": "#ECECE8", "textColor": "#8A8A85", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [16,16], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8",
+        "children": [{ "type": "text", "text": "RX AMI: PCIe_RX_AMI_5.ami  ·  DLL: ctspcie_rx_win64.dll  ·  AMI_Version 6.1  ·  NRZ", "fontSize": 13, "textColor": "#0A0A0A", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#ECECE8", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "Rx_Rj\n0.0157", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Rx_Dj\n0.106", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "Ignore_Bits\n3000000", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "adapt_mode\n3", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "peak\n34", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "lfeq\n4", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "gain\n16", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "vga_indbyp1\n4", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "wave_capture_delay\n1000", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "wave_capture_cnt\n2047", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "RX_corner\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "serdes_mode\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "lanel\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      },
+      { "type": "frame", "layout": "vertical", "gap": 0, "padding": [10,16], "width": "fill-container", "height": "fit-content", "fillColor": "#0A0A0A",
+        "children": [{ "type": "text", "text": "RX DFE CDR Settings", "fontSize": 14, "textColor": "#E6FF3D", "width": "fill-container", "height": "fit-content" }]
+      },
+      { "type": "frame", "layout": "horizontal", "gap": 1, "padding": [6,12], "width": "fill-container", "height": "fit-content", "fillColor": "#F5F4EF", "alignItems": "stretch",
+        "children": [
+          { "type": "rect", "text": "Mode\n2 (adapt)", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "IQPAMode\n1 (enabled)", "fontSize": 12, "fillColor": "#E6FF3D", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "IQPAHistScale\n10.0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "ReferenceOffset\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" },
+          { "type": "rect", "text": "PhaseOffset\n0", "fontSize": 12, "fillColor": "#F5F4EF", "textColor": "#0A0A0A", "borderWidth": 0, "borderRadius": 0, "width": "fill-container", "height": "fit-content" }
+        ]
+      }
+    ]
+  }]
+}
