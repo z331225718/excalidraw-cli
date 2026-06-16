@@ -22,6 +22,7 @@
 操作边界约束：
 - **语言跟随用户**：图表文字的语言与用户 prompt 保持一致, 技术术语用行业里通用的写法, 不机械翻译
 - 文字用 `<text>`(不是 `<path>`), 容器宽度留够——Excalidraw 按 CJK ≈ 1em / Latin ≈ 0.6em 重排
+- **XML 特殊字符必须转义**：`&` → `&amp;`、`<` → `&lt;`、`>` → `&gt;`。文本中的裸 `&` 会导致 sharp 解析崩溃 (`xmlParseEntityRef: no name`)。渲染前自查：`grep -n '&' diagram.svg | grep -v '&amp;\|&lt;\|&gt;\|&\#\|marker'` — 有输出就崩。避免用 `&`，改用"与""和""and"。
 - 连线使用正交折线替代斜直线(`<polyline>` 带水平/垂直折点)视觉效果更好
 - 可自由使用 `translate`, `rotate`, `scale`但请尽量避免使用 `skewX` / `skewY` / `matrix(...)` 发生空间级扭曲
 
