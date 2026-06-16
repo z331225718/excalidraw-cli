@@ -61,16 +61,15 @@ function estimateTextWidth(text, fontSize) {
 }
 
 function estimateTextHeight(text, fontSize, width) {
-  if (!text) return fontSize * 1.6;
+  if (!text) return fontSize * 2.0;
   const lines = String(text).split("\n");
-  // Each line needs at least 1.6x font size height, more if it wraps
   let totalHeight = 0;
   for (const line of lines) {
     const lineW = estimateTextWidth(line, fontSize);
     const wraps = Math.max(1, Math.ceil(lineW / Math.max(width || 1600, 1)));
-    totalHeight += fontSize * 1.6 * wraps;
+    totalHeight += fontSize * 2.0 * wraps;
   }
-  return Math.max(totalHeight, fontSize * 1.6);
+  return Math.max(totalHeight, fontSize * 2.0);
 }
 
 // --- Parse padding ---
@@ -554,8 +553,8 @@ function compileDSL(doc, options = {}) {
 
     // Shape
     const textH = estimateTextHeight(text, fontSize, availableW || 800);
-    const w = estimateTextWidth(text, fontSize) + SHAPE_INSET * 2 + 16;
-    const h = textH + SHAPE_INSET * 2 + 8;
+    const w = estimateTextWidth(text, fontSize) + SHAPE_INSET * 2 + 20;
+    const h = textH + SHAPE_INSET * 2 + 12;
     const fw = resolveSize(node.width, availableW, w);
     const fh = resolveSize(node.height, 0, h);
     return { w: fw || Math.max(w, 80), h: fh || Math.max(h, 36) };
@@ -566,7 +565,7 @@ function compileDSL(doc, options = {}) {
     const fontSize = node.fontSize || 14;
     const text = extractText(node);
     const textW = estimateTextWidth(text, fontSize) + 16;
-    const textH = fontSize * 1.6;
+    const textH = estimateTextHeight(text, fontSize, pw || 1600) + 4;
     const w = resolveSize(node.width, pw || textW, textW);
     const h = resolveSize(node.height, ph || textH, textH);
 
@@ -617,15 +616,15 @@ function compileDSL(doc, options = {}) {
     const fontSize = node.fontSize || 14;
     const text = extractText(node);
     const textW = estimateTextWidth(text, fontSize) + SHAPE_INSET * 2;
-    const textH = fontSize * 1.6 + SHAPE_INSET * 2 + 4;
+    const textH = estimateTextHeight(text, fontSize, pw || 800) + SHAPE_INSET * 2 + 4;
 
     let w, h;
     if (node.width != null && node.height != null) {
       w = resolveSize(node.width, pw || 200, textW);
       h = resolveSize(node.height, ph || 40, textH);
     } else {
-      w = Math.max(textW + 16, 80);
-      h = Math.max(textH + 4, 36);
+      w = Math.max(textW + 20, 80);
+      h = Math.max(textH + 8, 36);
     }
 
     const x = node.x != null ? px + node.x : px;
@@ -668,11 +667,12 @@ function compileDSL(doc, options = {}) {
 
     // Add text inside shape
     if (text) {
+      const innerTextH = estimateTextHeight(text, fontSize, w - SHAPE_INSET * 2);
       const tw = textW - SHAPE_INSET * 2;
       const tx = textAlign === "center" ? x + w / 2 - tw / 2 :
                  textAlign === "right" ? x + w - tw - SHAPE_INSET : x + SHAPE_INSET;
-      const ty = verticalAlign === "middle" ? y + h / 2 - fontSize * 0.7 :
-                 verticalAlign === "bottom" ? y + h - SHAPE_INSET - fontSize * 1.4 : y + SHAPE_INSET;
+      const ty = verticalAlign === "middle" ? y + h / 2 - innerTextH / 2 :
+                 verticalAlign === "bottom" ? y + h - SHAPE_INSET - innerTextH : y + SHAPE_INSET;
 
       elements.push({
         id: genId(),
@@ -680,7 +680,7 @@ function compileDSL(doc, options = {}) {
         x: tx,
         y: ty,
         width: tw,
-        height: fontSize * 1.4,
+        height: innerTextH + 4,
         angle: 0,
         strokeColor: textColor,
         backgroundColor: "transparent",
