@@ -2,8 +2,9 @@
 name: excalidraw-whiteboard
 version: 2.0.0
 description: >
-  图表渲染与转换。支持将 SVG、Mermaid、PlantUML 等格式转换为 Excalidraw 可编辑文件(.excalidraw) 和 PNG 图片。
-  基于 excalidraw-cli（开源替代 @larksuite/whiteboard-cli），输出为本地 .excalidraw 文件，可在 https://excalidraw.com 打开编辑。
+  图表渲染与转换。支持 DSL JSON、SVG、Mermaid 等格式输入，输出 Excalidraw 可编辑文件(.excalidraw) 和 PNG 图片。
+  DSL 是 AI agent 原生格式：结构化描述图表布局（Flex/Dagre/绝对定位），引擎自动计算坐标。
+  基于 excalidraw-cli（开源替代 @larksuite/whiteboard-cli），本地运行，无需云服务。
 metadata:
   requires:
     bins: ["excalidraw-cli"]
@@ -26,6 +27,7 @@ metadata:
 | 将 .excalidraw 渲染为 PNG 图片                 | [`excalidraw-cli render -i input.excalidraw -o output.png`](references/excalidraw-whiteboard-query.md) |
 | SVG 一步到位生成 PNG 图片                       | [`excalidraw-cli svg2png -i input.svg -o output.png`](references/excalidraw-whiteboard-query.md) |
 | 用户**已提供** Mermaid 代码                     | mmdc 渲染为 SVG → excalidraw-cli convert → .excalidraw                                        |
+| 用 DSL JSON 描述图表（架构/流程/Dagre拓扑）          | [`excalidraw-cli dsl -i diagram.json -o diagram.excalidraw -f png`](references/excalidraw-whiteboard-update.md) |
 | 新建/创作复杂图表（架构/流程/组织等）                    | → **[§ 创作 Workflow](references/excalidraw-whiteboard-workflow.md#创作-workflow)**                     |
 | 修改已有 .excalidraw 文件                       | 在 https://excalidraw.com 打开编辑，或重新生成 SVG 后 convert                                   |
 
@@ -36,6 +38,7 @@ metadata:
 | `excalidraw-cli convert -i <svg> -o <file>.excalidraw` | SVG → Excalidraw JSON（可在 excalidraw.com 编辑） |
 | `excalidraw-cli render -i <file>.excalidraw -o <file>.png` | .excalidraw → PNG 渲染 |
 | `excalidraw-cli svg2png -i <svg> -o <file>.png` | SVG → PNG 一步到位 |
+| `excalidraw-cli dsl -i <json> -o <file>.excalidraw -f png` | DSL JSON → .excalidraw + PNG |
 
 ### 选项
 

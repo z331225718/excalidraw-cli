@@ -21,6 +21,7 @@
   "dependencies": {
     "@excalidraw/excalidraw": "^0.18.0",
     "@excalidraw/utils": "^0.1.2",
+    "dagre": "^0.8.5",
     "sharp": "^0.35.1",
     "svg-parser": "^2.0.4"
   },
