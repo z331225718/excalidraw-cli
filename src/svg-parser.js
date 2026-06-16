@@ -266,7 +266,7 @@ function convertRect(attrs, ctx) {
     strokeStyle: "solid",
     roughness: 0,
     opacity: opacity,
-    roundness: rx > 0 ? { type: 3 } : { type: 1 },  // type 3 = proportional radii
+    roundness: rx > 0 ? { type: 3 } : null,  // null = sharp corners
     groupIds: [],
     frameId: null,
     boundElements: [],
@@ -492,7 +492,7 @@ function convertText(node, attrs, ctx) {
     isDeleted: false,
     text: text,
     fontSize: fontSize,
-    fontFamily: 5, // 5 = Virgil (Excalidraw's hand-drawn font)
+    fontFamily: 2, // 2 = Helvetica (clean sans-serif)
     textAlign: textAnchor === "middle" ? "center" : textAnchor === "end" ? "right" : "left",
     verticalAlign: "top",
     containerId: null,

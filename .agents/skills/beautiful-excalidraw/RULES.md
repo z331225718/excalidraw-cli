@@ -5,8 +5,8 @@ and a mood**; this file is the **hard limits of the medium**.
 
 ## Hard rules
 
-- **One font.** The board hardcodes Virgil (Excalidraw's hand-drawn font). Never set `font-family`. Type is
-  size / weight / casing / letter-spacing only — there is no typeface choice.
+- **One font.** The board uses Helvetica (clean sans-serif, suitable for serious reports). Never set
+  `font-family`. The SVG route defaults to this; the DSL route uses `fontFamily: 2`.
 - **Text lives in `<text>`** — never outline glyphs as `<path>`. `<tspan>` is not yet supported by
   excalidraw-cli.
 - **XML special characters MUST be escaped in `<text>` content.** `&` → `&amp;`, `<` → `&lt;`,

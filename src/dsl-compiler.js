@@ -61,11 +61,16 @@ function estimateTextWidth(text, fontSize) {
 }
 
 function estimateTextHeight(text, fontSize, width) {
-  if (!text) return fontSize * 1.4;
+  if (!text) return fontSize * 1.6;
   const lines = String(text).split("\n");
-  const maxLineWidth = Math.max(...lines.map(l => estimateTextWidth(l, fontSize)));
-  const wraps = Math.max(1, Math.ceil(maxLineWidth / Math.max(width, 1)));
-  return lines.length * fontSize * 1.4 * wraps;
+  // Each line needs at least 1.6x font size height, more if it wraps
+  let totalHeight = 0;
+  for (const line of lines) {
+    const lineW = estimateTextWidth(line, fontSize);
+    const wraps = Math.max(1, Math.ceil(lineW / Math.max(width || 1600, 1)));
+    totalHeight += fontSize * 1.6 * wraps;
+  }
+  return Math.max(totalHeight, fontSize * 1.6);
 }
 
 // --- Parse padding ---
@@ -452,7 +457,7 @@ function compileDSL(doc, options = {}) {
           strokeColor: "#555", backgroundColor: "transparent", fillStyle: "solid",
           strokeWidth: 1, strokeStyle: "solid", roughness: 0, opacity: 100,
           roundness: null, groupIds: [], boundElements: [], version: 1, isDeleted: false,
-          text: String(label), fontSize: 11, fontFamily: 5,
+          text: String(label), fontSize: 11, fontFamily: 2,
           textAlign: "center", verticalAlign: "top",
           containerId: eid, originalText: String(label),
         });
@@ -491,7 +496,7 @@ function compileDSL(doc, options = {}) {
 
     if (nt === "text") {
       const w = estimateTextWidth(text, fontSize) + 16;
-      const h = fontSize * 1.6;
+      const h = estimateTextHeight(text, fontSize, availableW || 1600) + 4;
       return { w: Math.min(w, availableW || Infinity), h };
     }
 
@@ -526,8 +531,9 @@ function compileDSL(doc, options = {}) {
     }
 
     // Shape
+    const textH = estimateTextHeight(text, fontSize, availableW || 800);
     const w = estimateTextWidth(text, fontSize) + SHAPE_INSET * 2 + 16;
-    const h = fontSize * 1.6 + SHAPE_INSET * 2 + 8;
+    const h = textH + SHAPE_INSET * 2 + 8;
     const fw = resolveSize(node.width, availableW, w);
     const fh = resolveSize(node.height, 0, h);
     return { w: fw || Math.max(w, 80), h: fh || Math.max(h, 36) };
@@ -574,7 +580,7 @@ function compileDSL(doc, options = {}) {
       isDeleted: false,
       text: String(text),
       fontSize: fontSize,
-      fontFamily: 5,
+      fontFamily: 2,
       textAlign: textAlign,
       verticalAlign: "top",
       containerId: null,
@@ -629,7 +635,7 @@ function compileDSL(doc, options = {}) {
       strokeStyle: node.borderDash === "dashed" ? "dashed" : node.borderDash === "dotted" ? "dotted" : "solid",
       roughness: 0,
       opacity: opacity,
-      roundness: elemType === "ellipse" ? { type: 2 } : (borderRadius > 0 ? { type: 3 } : { type: 1 }),
+      roundness: elemType === "ellipse" ? { type: 2 } : (borderRadius > 0 ? { type: 3 } : null),
       groupIds: [],
       boundElements: [],
       version: 1,
@@ -668,7 +674,7 @@ function compileDSL(doc, options = {}) {
         isDeleted: false,
         text: String(text),
         fontSize: fontSize,
-        fontFamily: 5,
+        fontFamily: 2,
         textAlign: textAlign,
         verticalAlign: "top",
         containerId: elem.id,
@@ -704,7 +710,7 @@ function compileDSL(doc, options = {}) {
       strokeStyle: f.borderDash === "dashed" ? "dashed" : f.borderDash === "dotted" ? "dotted" : "solid",
       roughness: 0,
       opacity: 100,
-      roundness: borderRadius > 0 ? { type: 3 } : { type: 1 },
+      roundness: borderRadius > 0 ? { type: 3 } : null,
       groupIds: [],
       boundElements: [],
       version: 1,
@@ -779,7 +785,7 @@ function compileDSL(doc, options = {}) {
         isDeleted: false,
         text: c.label,
         fontSize: 12,
-        fontFamily: 5,
+        fontFamily: 2,
         textAlign: "center",
         verticalAlign: "top",
         containerId: elem.id,
