@@ -6,10 +6,11 @@ Open-source alternative to `@larksuite/whiteboard-cli` for teams that can't use 
 ## Features
 
 - **SVG → .excalidraw** — convert SVG diagrams to editable Excalidraw files
+- **DSL → .excalidraw** — compile structured DSL JSON (Flex + Dagre layout) to Excalidraw
 - **SVG → PNG** — render SVG directly to PNG via sharp (no browser needed)
 - **.excalidraw → PNG** — render Excalidraw files to PNG images
 - **Zero native deps** — sharp has prebuilt binaries for Windows/macOS/Linux
-- **AI-friendly** — clean CLI interface, perfect for AI agent automation
+- **AI-friendly** — clean CLI interface, DSL for agent automation, SVG for human design
 
 ## Install
 
@@ -65,6 +66,49 @@ Renders a `.excalidraw` file to PNG. If the file was created by `convert` and
 contains an embedded `_svgSource`, the render is pixel-perfect. Otherwise, a
 placeholder with export instructions is generated.
 
+### `dsl` — DSL JSON → .excalidraw
+
+```
+excalidraw-cli dsl -i <input.json> -o <output.excalidraw> -f png
+```
+
+Compiles a structured DSL (Domain-Specific Language) JSON into Excalidraw elements.
+This is the **AI agent native format**: describe your diagram structurally
+(frames, shapes, text, connectors) with layout hints, and the compiler
+calculates all positions automatically.
+
+Supports:
+- **Flex layout** — `horizontal` / `vertical` with gap, padding, alignItems
+- **Dagre layout** — graph-based topological layout with auto-routed edges
+- **Absolute positioning** — `layout: "none"` for free-form placement
+- **Connectors** — arrows with anchor routing (top/right/bottom/left)
+
+See [elements/schema.md](./.agents/skills/excalidraw-whiteboard/elements/schema.md) for the full DSL schema.
+
+Example:
+```json
+{
+  "version": 2,
+  "nodes": [
+    { "type": "frame", "layout": "vertical", "gap": 24, "padding": 32,
+      "width": 800, "height": "fit-content", "children": [
+        { "type": "text", "text": "架构图", "fontSize": 24, "width": "fill-container", "height": "fit-content" },
+        { "type": "frame", "layout": "horizontal", "gap": 16, "alignItems": "stretch",
+          "width": "fill-container", "height": "fit-content", "children": [
+            { "type": "rect", "text": "输入", "fillColor": "#E8F5E9", "borderColor": "#43A047",
+              "width": "fill-container", "height": "fit-content" },
+            { "type": "rect", "text": "处理", "fillColor": "#E3F2FD", "borderColor": "#1E88E5",
+              "width": "fill-container", "height": "fit-content" },
+            { "type": "rect", "text": "输出", "fillColor": "#F3E5F5", "borderColor": "#8E24AA",
+              "width": "fill-container", "height": "fit-content" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Options
 
 | Flag | Description | Default |
@@ -115,6 +159,10 @@ placeholder with export instructions is generated.
                     │                    │
                     ▼                    ▼
                   .png                 .png
+
+               ┌──────────┐
+  .json ──────▶│   dsl    │──────▶ .excalidraw  (+ .png with -f png)
+               └──────────┘
 ```
 
 ## Use with Mermaid / PlantUML
