@@ -188,7 +188,6 @@ function compileDSL(doc, options = {}) {
 
     // First pass: measure children
     const childSizes = children.map(c => {
-      // For measuring, use large available space
       const result = measureNode(c, pw || 1600);
       return result;
     });
@@ -210,6 +209,30 @@ function compileDSL(doc, options = {}) {
     if (frameW === 0) frameW = contentW + pad.left + pad.right;
     if (frameH === 0) frameH = contentH + pad.top + pad.bottom;
 
+    // Redistribute fill-container space
+    const contentAreaW = frameW - pad.left - pad.right;
+    const contentAreaH = frameH - pad.top - pad.bottom;
+    if (isRow) {
+      const fillIndices = [];
+      let fixedTotal = 0;
+      for (let i = 0; i < children.length; i++) {
+        const child = children[i];
+        const cw = child.width;
+        if (typeof cw === 'string' && cw.startsWith('fill-container')) {
+          fillIndices.push(i);
+        } else {
+          fixedTotal += childSizes[i].w;
+        }
+      }
+      if (fillIndices.length > 0) {
+        const remaining = Math.max(0, contentAreaW - fixedTotal - gap * (children.length - 1));
+        const each = Math.floor(remaining / fillIndices.length);
+        for (const idx of fillIndices) {
+          childSizes[idx].w = each;
+        }
+      }
+    }
+
     const frameX = f.x != null ? px + f.x : px;
     const frameY = f.y != null ? py + f.y : py;
 
@@ -228,13 +251,12 @@ function compileDSL(doc, options = {}) {
       if (isRow) {
         cx = frameX + cursor;
         // Cross-axis alignment
-        const contentArea = frameH - pad.top - pad.bottom;
         if (alignItems === "center") {
-          cy = frameY + pad.top + (contentArea - size.h) / 2;
+          cy = frameY + pad.top + (contentAreaH - size.h) / 2;
         } else if (alignItems === "end") {
           cy = frameY + frameH - pad.bottom - size.h;
         } else if (alignItems === "stretch") {
-          size.h = contentArea;
+          size.h = contentAreaH;
           cy = frameY + pad.top;
         } else {
           cy = frameY + pad.top;
