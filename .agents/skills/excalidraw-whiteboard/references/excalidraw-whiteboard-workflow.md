@@ -47,13 +47,12 @@
 | 图表类型               | 身份                                  | 路径                                             |
 |--------------------|-------------------------------------|------------------------------------------------|
 | 思维导图、时序图、类图、饼图、甘特图 | 任何身份                                | [`../routes/mermaid.md`](../routes/mermaid.md) |
-| 其他图表               | `Claude` / `Gemini` / `GPT` / `GLM` | [`../routes/svg.md`](../routes/svg.md)         |
-| 其他图表               | `Doubao` / `Seed` / `Other`         | [`../routes/dsl.md`](../routes/dsl.md)         |
+| **结构型图表（默认）** | **任何身份（推荐 DSL）**                  | **[`../routes/dsl.md`](../routes/dsl.md)**     |
+| 装饰型/自由布局        | `Claude` / `Gemini` / `GPT` / `GLM` | [`../routes/svg.md`](../routes/svg.md)         |
 
-> **⚠️ SVG 路径失败回退**：走 `routes/svg.md` 时，碰到以下情况之一 → **丢弃当前 SVG，改读 `routes/dsl.md` 从零重画，不要逐行修补**：
-> - 渲染命令直接报错（语法级崩溃）
-> - 两轮改写仍无法消除视觉问题
-> - 目测 PNG 视觉严重错乱（文字大面积溢出、元素重叠压住关键信息、布局整体崩溃）
+> **⚠️ 回退规则**：
+> - 走 DSL 路径时，布局异常（2 轮仍重叠/截断）→ 改走 SVG 路径手工微调
+> - 走 SVG 路径时，渲染崩溃或视觉严重错乱 → 改走 DSL 路径从零重画
 
 ### 产物规范
 
@@ -71,13 +70,16 @@ diagram.png           ← PNG 预览图
 ### 导出命令
 
 ```bash
-# SVG → Excalidraw（最终交付物）
+# DSL → Excalidraw + PNG（推荐，结构化描述，引擎自动布局）
+excalidraw-cli dsl -i diagram.json -o diagram.excalidraw -f png
+
+# SVG → Excalidraw（手工 SVG 路径）
 excalidraw-cli convert -i diagram.svg -o diagram.excalidraw
 
 # SVG → PNG（预览验证）
 excalidraw-cli svg2png -i diagram.svg -o diagram.png
 
-# .excalidraw → PNG（从可编辑文件渲染）
+# .excalidraw → PNG
 excalidraw-cli render -i diagram.excalidraw -o diagram.png
 ```
 

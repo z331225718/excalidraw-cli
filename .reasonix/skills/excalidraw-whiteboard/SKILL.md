@@ -23,12 +23,12 @@ metadata:
 
 | 用户需求                                    | 行动                                                                                            |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------|
+| 新建/创作架构图、流程图、组织图、对比图、报告等（默认）         | → **[routes/dsl.md](routes/dsl.md)** — 输出 DSL JSON，引擎自动布局                           |
+| 用 DSL JSON 描述图表（Flex/Dagre 布局）             | [`excalidraw-cli dsl -i diagram.json -o diagram.excalidraw -f png`](references/excalidraw-whiteboard-update.md) |
+| 思维导图、时序图、类图、甘特图（Mermaid 代码）             | → **[routes/mermaid.md](routes/mermaid.md)** — mmdc → SVG → excalidraw-cli convert           |
 | 将 SVG 转为可编辑的 Excalidraw 文件               | [`excalidraw-cli convert -i input.svg -o output.excalidraw`](references/excalidraw-whiteboard-update.md) |
 | 将 .excalidraw 渲染为 PNG 图片                 | [`excalidraw-cli render -i input.excalidraw -o output.png`](references/excalidraw-whiteboard-query.md) |
 | SVG 一步到位生成 PNG 图片                       | [`excalidraw-cli svg2png -i input.svg -o output.png`](references/excalidraw-whiteboard-query.md) |
-| 用户**已提供** Mermaid 代码                     | mmdc 渲染为 SVG → excalidraw-cli convert → .excalidraw                                        |
-| 用 DSL JSON 描述图表（架构/流程/Dagre拓扑）          | [`excalidraw-cli dsl -i diagram.json -o diagram.excalidraw -f png`](references/excalidraw-whiteboard-update.md) |
-| 新建/创作复杂图表（架构/流程/组织等）                    | → **[§ 创作 Workflow](references/excalidraw-whiteboard-workflow.md#创作-workflow)**                     |
 | 修改已有 .excalidraw 文件                       | 在 https://excalidraw.com 打开编辑，或重新生成 SVG 后 convert                                   |
 
 ## Shortcuts
